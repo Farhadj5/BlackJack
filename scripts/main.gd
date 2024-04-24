@@ -6,7 +6,10 @@ var deck : Array[PlayingCardData] = []
 
 func _ready():
 	generateDeck(deckCount)
+	for card in deck:
+		print(card.printCardShortHand())
 	shuffleDeck()
+
 
 
 
@@ -17,7 +20,7 @@ func _process(delta):
 func generateDeck(deckCount: int):
 	for i in range(deckCount):
 		for suit in suits:
-			for rank in range(14):
+			for rank in range(1,14):
 				deck.append(PlayingCardData.new(suit,rank))
 				
 func shuffleDeck():

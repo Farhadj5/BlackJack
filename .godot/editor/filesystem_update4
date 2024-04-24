@@ -1,0 +1,8 @@
+res://cards.tscn
+res://scenes/main.tscn
+res://scenes/clubs.tscn
+res://scenes/spades.tscn
+res://scenes/hearts.tscn
+res://scenes/diamonds.tscn
+res://scripts/playerCardData.gd
+res://scripts/main.gd

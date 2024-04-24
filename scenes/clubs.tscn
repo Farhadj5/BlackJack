@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://b44nl1jlq1elu"]
+
+[ext_resource type="Texture2D" uid="uid://uwl527a7dcs3" path="res://art/Cards/Clubs-88x124.png" id="1_n8pu4"]
+
+[node name="Clubs" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(44, 62)
+texture = ExtResource("1_n8pu4")
+hframes = 5
+vframes = 3
