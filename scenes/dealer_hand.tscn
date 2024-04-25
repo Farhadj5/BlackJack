@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://dl2827e8llwpp"]
+
+[ext_resource type="Script" path="res://scripts/dealer_hand.gd" id="1_yi1v3"]
+
+[node name="DealerHand" type="Node2D"]
+script = ExtResource("1_yi1v3")
+
+[node name="DealerHandStart" type="Marker2D" parent="."]
+position = Vector2(576, 64)

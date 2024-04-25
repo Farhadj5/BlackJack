@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://b44nl1jlq1elu"]
+
+[ext_resource type="Script" path="res://scripts/cards.gd" id="1_ak0im"]
+[ext_resource type="Texture2D" uid="uid://uwl527a7dcs3" path="res://art/Cards/Clubs-88x124.png" id="2_inpft"]
+[ext_resource type="Texture2D" uid="uid://cdttk3f4svh63" path="res://art/Cards/Diamonds-88x124.png" id="3_8f86j"]
+[ext_resource type="Texture2D" uid="uid://bhjh2v7d288ar" path="res://art/Cards/Hearts-88x124.png" id="4_2otsa"]
+[ext_resource type="Texture2D" uid="uid://rl105p63eibn" path="res://art/Cards/Spades-88x124.png" id="5_oox66"]
+[ext_resource type="Texture2D" uid="uid://vl8mjsec6j5i" path="res://art/Cards/Card_Back-88x124.png" id="6_qdhy5"]
+
+[node name="Cards" type="Node2D"]
+script = ExtResource("1_ak0im")
+
+[node name="HeartsSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(44, 62)
+texture = ExtResource("4_2otsa")
+hframes = 5
+vframes = 3
+
+[node name="DiamondsSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(44, 62)
+texture = ExtResource("3_8f86j")
+hframes = 5
+vframes = 3
+
+[node name="ClubsSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(44, 62)
+texture = ExtResource("2_inpft")
+hframes = 5
+vframes = 3
+
+[node name="SpadesSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(44, 62)
+texture = ExtResource("5_oox66")
+hframes = 5
+vframes = 3
+
+[node name="BackOfCardSprite" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(44, 62)
+texture = ExtResource("6_qdhy5")
+hframes = 2
+frame = 1

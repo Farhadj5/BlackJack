@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://bgwu6ytk5xf02"]
 
-[ext_resource type="Script" path="res://scenes/player_hand.gd" id="1_gbyc6"]
+[ext_resource type="Script" path="res://scripts/player_hand.gd" id="1_2beue"]
 
 [node name="PlayerHand" type="Node2D"]
-script = ExtResource("1_gbyc6")
+script = ExtResource("1_2beue")
 
 [node name="PlayerHandStart" type="Marker2D" parent="."]
 position = Vector2(608, 416)
@@ -25,3 +25,4 @@ offset_bottom = 623.0
 text = "Stand"
 
 [connection signal="pressed" from="HandGUI/Hit" to="." method="_on_hit_pressed"]
+[connection signal="pressed" from="HandGUI/Stand" to="." method="_on_stand_pressed"]

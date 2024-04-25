@@ -16,3 +16,9 @@ res://scenes/diamonds.gd
 res://scenes/hearts.gd
 res://scenes/spades.gd
 res://scripts/playingCardData.gd
+res://scenes/dealer_hand.tscn
+res://scenes/cards.tscn
+res://scripts/clubs.gd
+res://scripts/dealer_hand.gd
+res://scripts/player_hand.gd
+res://scripts/cards.gd
