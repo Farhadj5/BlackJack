@@ -1,10 +1,12 @@
-[gd_scene load_steps=2 format=3 uid="uid://igkhucwo4fyf"]
+[gd_scene load_steps=3 format=3 uid="uid://igkhucwo4fyf"]
 
 [ext_resource type="Texture2D" uid="uid://cdttk3f4svh63" path="res://art/Cards/Diamonds-88x124.png" id="1_5vny5"]
+[ext_resource type="Script" path="res://scenes/diamonds.gd" id="1_rhnvo"]
 
 [node name="Diamonds" type="Node2D"]
+script = ExtResource("1_rhnvo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="CardSprite" type="Sprite2D" parent="."]
 position = Vector2(44, 62)
 texture = ExtResource("1_5vny5")
 hframes = 5

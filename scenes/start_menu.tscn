@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://donx3mc4066gc"]
+
+[ext_resource type="Script" path="res://scenes/start_menu.gd" id="1_w0jpj"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_w0jpj")
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 555.0
+offset_top = 359.0
+offset_right = 713.0
+offset_bottom = 455.0
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://b33emkrpi1fnn"]
+[gd_scene load_steps=3 format=3 uid="uid://b33emkrpi1fnn"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_xmheq"]
+[ext_resource type="PackedScene" uid="uid://donx3mc4066gc" path="res://scenes/start_menu.tscn" id="2_0je7t"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_xmheq")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0.278431, 0.662745, 0.27451, 1)
+
+[node name="StartMenu" parent="." instance=ExtResource("2_0je7t")]
+
+[connection signal="start_game" from="StartMenu" to="." method="start_game"]

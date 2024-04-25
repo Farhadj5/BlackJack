@@ -1,17 +1,11 @@
 extends Node
 
+var player_hand_scene = preload("res://scenes/player_hand.tscn")
 const suits : Array[String] = ["spades","clubs","hearts","diamonds"]
 var deck : Array[PlayingCardData] = []
-@export var deckCount : int = 1
 
 func _ready():
-	generateDeck(deckCount)
-	for card in deck:
-		print(card.printCardShortHand())
-	shuffleDeck()
-
-
-
+	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -19,7 +13,7 @@ func _process(delta):
 	
 func generateDeck(deckCount: int):
 	for i in range(deckCount):
-		for suit in suits:
+		for suit in len(Global.Suit):
 			for rank in range(1,14):
 				deck.append(PlayingCardData.new(suit,rank))
 				
@@ -35,3 +29,13 @@ func shuffleDeck():
 		deck[j] = tmp
 		
 	
+func dealFromDeck(playerHand):
+	playerHand.display_card(deck.pop_back());
+
+func start_game(deckCount: int):
+	generateDeck(deckCount)
+	shuffleDeck()
+	$StartMenu.hide()
+	var playerHand = player_hand_scene.instantiate()
+	playerHand.connect("get_card_from_deck",dealFromDeck.bind(playerHand))
+	add_child(playerHand)
