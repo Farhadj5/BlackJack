@@ -41,18 +41,4 @@ theme_override_font_sizes/normal_font_size = 64
 text = "DEALER BUSTED!"
 fit_content = true
 
-[node name="PushText" type="RichTextLabel" parent="."]
-visible = false
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -530.0
-offset_top = 202.0
-offset_right = -266.0
-offset_bottom = 378.0
-grow_horizontal = 2
-theme_override_font_sizes/normal_font_size = 64
-text = "PUSH!"
-fit_content = true
-
 [connection signal="start_game" from="StartMenu" to="." method="start_game"]

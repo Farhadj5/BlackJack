@@ -7,13 +7,6 @@ var dealerHand = null
 var playerHands = []
 const suits : Array[String] = ["spades","clubs","hearts","diamonds"]
 var deck : Array[PlayingCardData] = []
-
-func _ready():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 	
 func generateDeck(deckCount: int):
 	deck = []
@@ -21,7 +14,6 @@ func generateDeck(deckCount: int):
 		for suit in len(Global.Suit):
 			for rank in range(1,14):
 				deck.append(PlayingCardData.new(suit,rank))
-				
 func shuffleDeck():
 	var rng = RandomNumberGenerator.new()
 
@@ -53,11 +45,13 @@ func start_game(deckCount: int):
 	shuffleDeck()
 	$PlayerBustText.hide()
 	$DealerBustText.hide()
+	$PushText.hide()
 	$StartMenu.hide()
 	var playerHand = player_hand_scene.instantiate()
 	playerHand.connect("get_card_from_deck",dealCard.bind(playerHand))
 	playerHand.connect("player_stand", player_stand)
 	playerHand.connect("player_bust", player_bust)
+	
 	dealerHand = dealer_hand_scene.instantiate()
 	dealerHand.connect("dealer_stand",dealer_stand)
 	dealerHand.connect("dealer_bust",dealer_bust)
@@ -79,17 +73,21 @@ func player_bust():
 func dealer_stand():
 	if dealerHand.totalHandValue > playerHands[0].totalHandValue:
 		player_bust()
-	else:
+	elif dealerHand.totalHandValue < playerHands[0].totalHandValue:
 		dealer_bust()
+	else:
+		push()
 
 func dealer_bust():
 	$DealerBustText.visible = true
 	$StartMenu.visible = true
+
+func push():
+	$PushText.visible=true
+	$StartMenu.visible = true
 	
 func start_dealer():
-	dealerHand.showHiddenCard()
-	var keepDealing = true
+	var keepDealing = dealerHand.showHiddenCard()
 	while keepDealing:
 		await get_tree().create_timer(1).timeout
 		keepDealing = dealCard(dealerHand)
-		
